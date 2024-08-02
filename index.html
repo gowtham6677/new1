@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOWTHAM BANKING</title>
+    <link rel="stylesheet" href="styleg.css">
+</head>
+<body>
+    <h1>Welcome!!!</h1>
+    <button onclick="showAdminPage()">Admin</button>
+    <button onclick="showUserLoginPage()">User</button>
+    <div id="admin-page" style="display: none;">
+        <h2>Admin Page</h2>
+        <button onclick="showUserRegistration()">User Registration</button>
+        <div id="user-list"></div>
+    </div>
+    <div id="user-registration" style="display: none;">
+        <h2>User Registration</h2>
+        <form onsubmit="registerUser(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <div id="user-login" style="display: none;">
+        <h2>User Login</h2>
+        <form onsubmit="loginUser(event)">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" required>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="user-page" style="display: none;">
+        <h2>User Page</h2>
+        <h3>Account Management</h3>
+        <p id="account-info"></p>
+        <button onclick="logout()">Logout</button>
+        <form onsubmit="depositMoney(event)">
+            <label for="deposit-amount">Deposit Amount (INR):</label>
+            <input type="number" id="deposit-amount" required>
+            <button type="submit">Deposit</button>
+        </form>
+        <form onsubmit="withdrawMoney(event)">
+            <label for="withdraw-amount">Withdraw Amount (INR):</label>
+            <input type="number" id="withdraw-amount" required>
+            <button type="submit">Withdraw</button>
+        </form>
+        <button onclick="checkBalance()">Check Balance</button>
+    </div>
+    <script src="scriptg.js"></script>
+</body>
+</html>
