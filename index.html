@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOWTHAM BANKING</title>
+    <title>BANKING</title>
     <link rel="stylesheet" href="styleg.css">
 </head>
 <body>
     <h1>Welcome!!!</h1>
-    <button onclick="showAdminPage()">Admin</button>
+    <button onclick="showAdminPasswordField()">Admin</button>
     <button onclick="showUserLoginPage()">User</button>
+    <div id="admin-password-field" style="display: none;">
+        <label for="admin-pass">Enter Admin Password:</label>
+        <input id="admin-pass" type="password">
+        <button onclick="showAdminPage()">Submit</button>
+    </div>
     <div id="admin-page" style="display: none;">
         <h2>Admin Page</h2>
-        <button onclick="showUserRegistration()">User Registration</button>
         <div id="user-list"></div>
     </div>
     <div id="user-registration" style="display: none;">
-        <h2>User Registration</h2>
+        <h2>*User Registration*</h2>
         <form onsubmit="registerUser(event)">
             <label for="username">Username:</label>
             <input type="text" id="username" required>
@@ -52,6 +56,7 @@
         </form>
         <button onclick="checkBalance()">Check Balance</button>
     </div>
+    <h2>Note:This website is not connected to any database and the user details will not be shared even with the owner of this website.</h2>
     <script src="scriptg.js"></script>
 </body>
 </html>
