@@ -1,12 +1,28 @@
 let users = [];
 let currentUser = null;
 
-function showAdminPage() {
-    document.getElementById('admin-page').style.display = 'block';
+function showAdminPasswordField() {
+    document.getElementById('admin-password-field').style.display = 'block';
+    document.getElementById('admin-page').style.display = 'none';
     document.getElementById('user-registration').style.display = 'none';
     document.getElementById('user-login').style.display = 'none';
     document.getElementById('user-page').style.display = 'none';
-    updateUserList();
+}
+
+function showAdminPage() {
+    const admpass = document.getElementById('admin-pass').value;
+    const correctPassword = "gowtham";
+
+    if (admpass === correctPassword) {
+        document.getElementById('admin-page').style.display = 'block';
+        document.getElementById('admin-password-field').style.display = 'none';
+        document.getElementById('user-registration').style.display = 'none';
+        document.getElementById('user-login').style.display = 'none';
+        document.getElementById('user-page').style.display = 'none';
+        updateUserList();
+    } else {
+        alert("You cannot access the admin page without the correct password!!");
+    }
 }
 
 function showUserRegistration() {
@@ -18,7 +34,8 @@ function showUserRegistration() {
 
 function showUserLoginPage() {
     document.getElementById('admin-page').style.display = 'none';
-    document.getElementById('user-registration').style.display = 'none';
+    document.getElementById('admin-password-field').style.display = 'none';
+    document.getElementById('user-registration').style.display = 'block';
     document.getElementById('user-login').style.display = 'block';
     document.getElementById('user-page').style.display = 'none';
 }
@@ -29,9 +46,13 @@ function registerUser(event) {
     const password = document.getElementById('password').value;
     const userId = 'U' + Date.now();
     users.push({ userId, username, password, balance: 0 });
-    alert('User registered with ID: ' + userId);
-    document.getElementById('username').value = '';
-    document.getElementById('password').value = '';
+    if (username === password) {
+        alert("Username and password should not be the same!!");
+    } else {
+        alert('User registered with ID: ' + userId);
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+    }
 }
 
 function loginUser(event) {
