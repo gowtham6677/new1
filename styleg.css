@@ -30,3 +30,11 @@ button {
 button:hover {
     background-color: darkblue;
 }
+#admin-page
+{
+    display:none;
+}
+#user-login
+{
+    display:none;
+}
