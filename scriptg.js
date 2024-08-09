@@ -15,6 +15,7 @@ function showAdminPage() {
 
     if (admpass === correctPassword) {
         document.getElementById('admin-page').style.display = 'block';
+        document.getElementById('ext-btn').style.display = 'block';
         document.getElementById('admin-password-field').style.display = 'none';
         document.getElementById('user-registration').style.display = 'none';
         document.getElementById('user-login').style.display = 'none';
@@ -85,6 +86,11 @@ function depositMoney(event) {
         updateAccountInfo();
         document.getElementById('deposit-amount').value = '';
     }
+}
+function closeadmin()
+{
+    document.getElementById('admin-page').style.display = 'none';
+    document.getElementById('ext-btn').style.display = 'none';
 }
 
 function withdrawMoney(event) {
