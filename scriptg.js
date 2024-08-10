@@ -1,29 +1,12 @@
 let users = [];
 let currentUser = null;
 
-function showAdminPasswordField() {
-    document.getElementById('admin-password-field').style.display = 'block';
-    document.getElementById('admin-page').style.display = 'none';
+function showAdminPage() {
+    document.getElementById('admin-page').style.display = 'block';
     document.getElementById('user-registration').style.display = 'none';
     document.getElementById('user-login').style.display = 'none';
     document.getElementById('user-page').style.display = 'none';
-}
-
-function showAdminPage() {
-    const admpass = document.getElementById('admin-pass').value;
-    const correctPassword = "gowtham";
-
-    if (admpass === correctPassword) {
-        document.getElementById('admin-page').style.display = 'block';
-        document.getElementById('ext-btn').style.display = 'block';
-        document.getElementById('admin-password-field').style.display = 'none';
-        document.getElementById('user-registration').style.display = 'none';
-        document.getElementById('user-login').style.display = 'none';
-        document.getElementById('user-page').style.display = 'none';
-        updateUserList();
-    } else {
-        alert("You cannot access the admin page without the correct password!!");
-    }
+    updateUserList();
 }
 
 function showUserRegistration() {
@@ -35,8 +18,7 @@ function showUserRegistration() {
 
 function showUserLoginPage() {
     document.getElementById('admin-page').style.display = 'none';
-    document.getElementById('admin-password-field').style.display = 'none';
-    document.getElementById('user-registration').style.display = 'block';
+    document.getElementById('user-registration').style.display = 'none';
     document.getElementById('user-login').style.display = 'block';
     document.getElementById('user-page').style.display = 'none';
 }
@@ -47,13 +29,9 @@ function registerUser(event) {
     const password = document.getElementById('password').value;
     const userId = 'U' + Date.now();
     users.push({ userId, username, password, balance: 0 });
-    if (username === password) {
-        alert("Username and password should not be the same!!");
-    } else {
-        alert('User registered with ID: ' + userId);
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
-    }
+    alert('User registered with ID: ' + userId);
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
 }
 
 function loginUser(event) {
@@ -87,11 +65,6 @@ function depositMoney(event) {
         document.getElementById('deposit-amount').value = '';
     }
 }
-function closeadmin()
-{
-    document.getElementById('admin-page').style.display = 'none';
-    document.getElementById('ext-btn').style.display = 'none';
-}
 
 function withdrawMoney(event) {
     event.preventDefault();
@@ -107,7 +80,7 @@ function withdrawMoney(event) {
 
 function checkBalance() {
     if (currentUser) {
-        alert(`Your current balance is INR ${currentUser.balance}`);
+        alert(Your current balance is INR ${currentUser.balance});
     }
 }
 
@@ -115,10 +88,10 @@ function updateUserList() {
     const userList = document.getElementById('user-list');
     userList.innerHTML = '<h3>Registered Users</h3>';
     users.forEach(user => {
-        userList.innerHTML += `<p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance}</p>`;
+        userList.innerHTML += <p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance}</p>;
     });
 }
 
 function updateAccountInfo() {
-    document.getElementById('account-info').textContent = `User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance}`;
+    document.getElementById('account-info').textContent = User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance};
 }

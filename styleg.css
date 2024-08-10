@@ -30,18 +30,5 @@ button {
 }
 
 button:hover {
-    background-color: darkblue;
-    box-shadow:   0.5 white;
-}
-#ext-btn
-{
-    display: none;
-}
-#admin-page
-{
-    display: none;
-}
-#user-login
-{
-    display: none;
+    background-color: blue;
 }
