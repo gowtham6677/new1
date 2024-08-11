@@ -21,6 +21,8 @@ function showUserLoginPage() {
     document.getElementById('user-registration').style.display = 'none';
     document.getElementById('user-login').style.display = 'block';
     document.getElementById('user-page').style.display = 'none';
+    document.getElementById('usr').style.display = 'block';
+  
 }
 
 function registerUser(event) {
@@ -80,7 +82,7 @@ function withdrawMoney(event) {
 
 function checkBalance() {
     if (currentUser) {
-        alert(Your current balance is INR ${currentUser.balance});
+        alert(`Your current balance is INR ${currentUser.balance}`);
     }
 }
 
@@ -88,10 +90,30 @@ function updateUserList() {
     const userList = document.getElementById('user-list');
     userList.innerHTML = '<h3>Registered Users</h3>';
     users.forEach(user => {
-        userList.innerHTML += <p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance}</p>;
+        userList.innerHTML += `<p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance}</p>`;
     });
 }
 
 function updateAccountInfo() {
-    document.getElementById('account-info').textContent = User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance};
+    document.getElementById('account-info').textContent = `User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance}`;
+}
+function pwd()
+{
+    document.getElementById("adm-pass").style.display="block";
+    document.getElementById("pwd-btn").style.display="block";
+
+}
+function pwdcheck()
+{
+    var admpass=document.getElementById("adm-pass").value
+    var correctpass="gowtham"
+    if(admpass==correctpass)
+    {
+        showAdminPage()
+    }
+    else
+    {
+        alert("Enter the correct admion password!!")
+        document.getElementById
+    }
 }

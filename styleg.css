@@ -1,12 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: black;
-    font-weight: bolder;
 }
 
 h1, h2, h3 {
-    color: white;
+    color: #333;
 }
 
 label {
@@ -23,12 +21,15 @@ button {
     display: block;
     margin-top: 10px;
     padding: 10px;
-    background-color: blue;
-    color: white;
+    background-color: skyblue;
+    color: black;
     border: none;
     cursor: pointer;
+    font-weight: bolder;
+    transition: 0.5s;
 }
 
 button:hover {
-    background-color: blue;
+    background-color: darkblue;
+    color: white;
 }

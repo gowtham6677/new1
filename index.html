@@ -5,29 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BANKING</title>
     <link rel="stylesheet" href="styleg.css">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <link rel="icon" href="rupee.png">
 </head>
 <body>
-    <h1>Welcome!!!</h1>
-    <button onclick="showAdminPage()">Admin</button>
+    <h1>WELCOME!!!</h1>
+    <button onclick="pwd()">Admin</button>
+    <div id="extra"> 
+        <input type="password" id="adm-pass" style="display: none;">
+    <button id="pwd-btn" style="display: none;" onclick="pwdcheck()">Submit</button>
+    </div>
     <button onclick="showUserLoginPage()">User</button>
+    <button onclick="showUserRegistration()" id="usr" style="display: none;">User Registration</button>
     <div id="admin-page" style="display: none;">
         <h2>Admin Page</h2>
         <div id="user-list"></div>
     </div>
     <div id="user-registration" style="display: none;">
-        <h2>*User Registration*</h2>
-        <form id="registrationForm">
+        <h2>User Registration</h2>
+        <form onsubmit="registerUser(event)">
             <label for="username">Username:</label>
             <input type="text" id="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" required>
             <button type="submit">Register</button>
         </form>
+        <button onclick="showUserLoginPage()"> User Login</button>
     </div>
     <div id="user-login" style="display: none;">
         <h2>User Login</h2>
-        <form id="loginForm">
+        <form onsubmit="loginUser(event)">
             <label for="login-username">Username:</label>
             <input type="text" id="login-username" required>
             <label for="login-password">Password:</label>
@@ -39,20 +45,19 @@
         <h2>User Page</h2>
         <h3>Account Management</h3>
         <p id="account-info"></p>
-        <button id="logoutButton">Logout</button>
-        <form id="depositForm">
+        <button onclick="logout()">Logout</button>
+        <form onsubmit="depositMoney(event)">
             <label for="deposit-amount">Deposit Amount (INR):</label>
             <input type="number" id="deposit-amount" required>
             <button type="submit">Deposit</button>
         </form>
-        <form id="withdrawForm">
+        <form onsubmit="withdrawMoney(event)">
             <label for="withdraw-amount">Withdraw Amount (INR):</label>
             <input type="number" id="withdraw-amount" required>
             <button type="submit">Withdraw</button>
         </form>
-        <button id="checkBalanceButton">Check Balance</button>
+        <button onclick="checkBalance()">Check Balance</button>
     </div>
-    <h2>Note:This website is not connected to any database and the  user data are not shared even with the owner of website.Only for educational purpose.After refresh your data will be erased</h2>
     <script src="scriptg.js"></script>
 </body>
 </html>
