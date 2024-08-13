@@ -113,7 +113,7 @@ function pwdcheck()
     }
     else
     {
-        alert("Enter the correct admion password!!")
+        alert("Enter the correct admin password!!")
         document.getElementById
     }
 }
