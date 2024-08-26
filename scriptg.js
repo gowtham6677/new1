@@ -86,29 +86,34 @@ function checkBalance() {
 }
 
 function updateUserList() {
+const password = document.getElementById('login-password').value;
     const userList = document.getElementById('user-list');
     userList.innerHTML = '<h3>Registered Users</h3>';
     users.forEach(user => {
-        userList.innerHTML += `<p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance}, Password: ${user.password}</p>`;
+        userList.innerHTML += `<p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance}</p>`;
     });
 }
 
 function updateAccountInfo() {
     document.getElementById('account-info').textContent = `User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance}`;
 }
+function pwd()
+{
+    document.getElementById("adm-pass").style.display="block";
+    document.getElementById("pwd-btn").style.display="block";
 
-function pwd() {
-    document.getElementById("adm-pass").style.display = "block";
-    document.getElementById("pwd-btn").style.display = "block";
 }
-
-function pwdcheck() {
-    const admpass = document.getElementById("adm-pass").value;
-    const correctpass = "gowtham";
-    if (admpass === correctpass) {
-        showAdminPage();
-    } else {
-        alert("Enter the correct admin password!!");
-        document.getElementById("adm-pass").value = ''; // Reset input after incorrect attempt
+function pwdcheck()
+{
+    var admpass=document.getElementById("adm-pass").value
+    var correctpass="gowtham"
+    if(admpass==correctpass)
+    {
+        showAdminPage()
+    }
+    else
+    {
+        alert("Enter the correct admion password!!")
+        document.getElementById
     }
 }
