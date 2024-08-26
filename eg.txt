@@ -1,0 +1,85 @@
+<input id="ip">
+<button onclick="add()">Add</button>
+<ul id="list-cnt">
+    <li>hello <button onclick="dlt(event)">Delete</button>
+
+    </li>
+   
+</ul>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 300px;
+    }
+    input {
+        width: calc(60% - 50px);
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+    }
+    button {
+        padding: 10px;
+        border: none;
+        background: #6c63ff;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    button:hover {
+        background: #574bff;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+    li {
+        background: #f9f9f9;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    li button {
+        background: #ff6b6b;
+        border-radius: 5px;
+        padding: 5px 10px;
+        transition: background 0.3s ease;
+    }
+    li button:hover {
+        background: #ff3b3b;
+    }
+</style>
+<script>
+     var ul=document.getElementById("list-cnt")
+     var input=document.getElementById("ip")
+    function add()
+    {
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value+"<button onclick='dlt(event)'>Delete</button>"
+        ul.append(listitem)
+       
+    }
+    function dlt(event)
+    {
+        event.target.parentElement.remove()
+
+    }
+</script>
