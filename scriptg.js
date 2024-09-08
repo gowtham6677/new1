@@ -90,12 +90,12 @@ const password = document.getElementById('login-password').value;
     const userList = document.getElementById('user-list');
     userList.innerHTML = '<h3>Registered Users</h3>';
     users.forEach(user => {
-        userList.innerHTML += `<p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance}</p>`;
+        userList.innerHTML += `<p>ID: ${user.userId}, Username: ${user.username}, Balance: INR ${user.balance},Password:${user.password} </p>`;
     });
 }
 
 function updateAccountInfo() {
-    document.getElementById('account-info').textContent = `User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance} Password:${currentUser.password}`;
+    document.getElementById('account-info').textContent = `User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance}`;
 }
 function pwd()
 {
