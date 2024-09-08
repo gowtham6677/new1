@@ -95,7 +95,7 @@ const password = document.getElementById('login-password').value;
 }
 
 function updateAccountInfo() {
-    document.getElementById('account-info').textContent = `User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance}`;
+    document.getElementById('account-info').textContent = `User ID: ${currentUser.userId}, Balance: INR ${currentUser.balance} Password:${currentUser.password}`;
 }
 function pwd()
 {
@@ -113,7 +113,7 @@ function pwdcheck()
     }
     else
     {
-        alert("Enter the correct admion password!!")
+        alert("Enter the correct admin password!!")
         document.getElementById
     }
 }
